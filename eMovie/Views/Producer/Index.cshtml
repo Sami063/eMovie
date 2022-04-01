@@ -1,0 +1,90 @@
+﻿@model IEnumerable<eMovie.Models.Producer>
+
+@{
+    ViewData["Title"] = "Available Producers";
+    
+}
+<!-- Search field for Producers -->
+<h3> Welcome to the producers page! </h3>
+<div class="container">
+<div class="row">
+    <div class="col-sm-3">
+        <a asp-action="Create" class="btn btn-info form-control text-white">Create Producer</a>
+    </div>
+    <div class="col-sm">
+        <form asp-controller="Producer" asp-action="Index">
+            <span class="btn-group" style="width: 200px;">
+                <input class="form-control" type="text" name="findProducer" placeholder="Search" />
+            </span>
+            <input class="p-1 ml-2 btn btn-sm btn-info" type="submit" value="Find" />
+        </form>
+    </div>
+</div>
+</div>
+
+<div class="col-12 border p-0 mt-3">
+    <form method="get">
+        @if(Model.Count() > 0)
+        {
+            <table class="table table-striped border table-dark">
+                <tr class="table-primary">
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.ProfileURL)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.FullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.Bio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.Movies)
+                    </th>
+                </tr>
+
+                @foreach (var producer in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="@Url.Content(@producer.ProfileURL)" width="90"; height= "90" /> 
+                        </td>
+                        <td>
+                            @Html.DisplayFor(p => producer.FullName) 
+                        </td>
+                        <td>
+                            @Html.DisplayFor(p => producer.Bio)
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="btn btn-success btn-sm text-white">
+                                @Html.ActionLink("Detail", "Detail", new { id = producer.Id }) 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn btn-danger btn-sm text-white">
+                                @Html.ActionLink("Delete", "Delete", new { id = producer.Id }) 
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        } 
+        else
+        {
+            <h1> No Actors found </h1>
+        }
+    </form>
+</div>
+
+<style>
+    img {
+        width: 100px;
+        height: 100px;
+        border-top: 0; 
+        border-bottom: 0;
+        border-left: 0;
+        border-radius: 50%;
+    }
+</style>

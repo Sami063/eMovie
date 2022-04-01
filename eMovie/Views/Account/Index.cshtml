@@ -1,0 +1,25 @@
+﻿<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title> Index </title>
+    </head>
+    <body>
+        <h3>Login Page</h3>
+        
+        <form method="post" asp-controller="account" asp-action="login">
+            <div class="col">
+                <div class="col-md-4">
+                    <p>User name</p>
+                    <input type="text" name="username" />
+                </div>
+                <div class="col-md-4">
+                    <p>Password</p>
+                    <input type="password" name="password" />
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" value="login" />
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

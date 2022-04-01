@@ -1,0 +1,16 @@
+services:
+  emovie:
+    build:
+      context: C:\Users\Samuel\Documents\eMovie\eMovie
+      dockerfile: eMovie/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: emovie
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\Samuel\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Samuel\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

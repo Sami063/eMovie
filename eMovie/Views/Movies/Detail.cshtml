@@ -1,0 +1,94 @@
+﻿@model eMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Detail";
+}
+<!-- All Info About The Movie -->
+<div class="row h-100">
+    <div class="col-md-4">
+        <img src="@Url.Content(Model.MovieImage)" class="card-img-top" style="border-radius: 5%; width: 250px; height: 300px;"/> 
+        <p> Watch Now </p>
+    </div>
+    <div class="col-md-8 left-box">
+        <h3>@Model.Name</h3> <br />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="btn btn-dark border-secondary">Add To Watchlist</div>
+            </div>
+        </div> 
+        <br />
+        <div class="col">
+            <h3>Cast: </h3>
+            <img src="https://www.kulturbiografen.dk/data/TempFolderLongTerm//mediacache_3e78857648f0a74393bd3168e5f72553.jpg" alt="Sample Photo"/>
+            <img src="https://www.kulturbiografen.dk/data/TempFolderLongTerm//mediacache_3e78857648f0a74393bd3168e5f72553.jpg" alt="Sample Photo"/>
+            <img src="https://www.kulturbiografen.dk/data/TempFolderLongTerm//mediacache_3e78857648f0a74393bd3168e5f72553.jpg" alt="Sample Photo"/>
+            <br />
+            <p>@Model.Description</p>
+        </div>
+    </div>
+</div>
+
+<!-- Popular movies -->
+<div class="container movies h-100">
+    <h3>Popular Movies</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-6"><img src="https://www.kulturbiografen.dk/data/TempFolderLongTerm//mediacache_3e78857648f0a74393bd3168e5f72553.jpg" alt="Sample Photo" /></div>
+                <div class="col-6"><img src="https://www.kulturbiografen.dk/data/TempFolderLongTerm//mediacache_3e78857648f0a74393bd3168e5f72553.jpg" alt="Sample Photo"/></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-6"><img src="https://www.kulturbiografen.dk/data/TempFolderLongTerm//mediacache_3e78857648f0a74393bd3168e5f72553.jpg" alt="Sample Photo"/></div>
+                <div class="col-6"><img src="https://www.kulturbiografen.dk/data/TempFolderLongTerm//mediacache_3e78857648f0a74393bd3168e5f72553.jpg" alt="Sample Photo"/></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-6"><img src="https://www.kulturbiografen.dk/data/TempFolderLongTerm//mediacache_3e78857648f0a74393bd3168e5f72553.jpg" alt="Sample Photo"/></div>
+                <div class="col-6"><img src="https://www.kulturbiografen.dk/data/TempFolderLongTerm//mediacache_3e78857648f0a74393bd3168e5f72553.jpg" alt="Sample Photo"/></div>
+            </div>
+        </div>
+     </div>
+</div>
+
+<style>
+    body {
+        
+        background-image: url("https://i.ytimg.com/vi/9sNQFJAb3Ss/maxresdefault.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .left-box p {
+        font-size: 18px;
+        font-family: sans-serif;
+        color: white;
+    }
+    .left-box h3 {
+        color: white;
+    }
+    .left-box img {
+        margin: 5px;
+        width: 40px;
+        height: 50px;
+
+    }
+    .movies h3 {
+        color: white;
+    }
+
+    .movies img {
+        width: 100px;
+        height: 110px;
+        margin: 5px;
+        border-radius: 5%;
+    }
+</style>
+
+<!--
+
+-->
+    
+

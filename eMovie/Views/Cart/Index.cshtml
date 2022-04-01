@@ -1,0 +1,104 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cart</title>
+</head>
+<body>
+    <h1> Shopping Cart</h1>
+    <div class="col-6 border p-0 mt-0">
+            <table class="table border bg-white" style="border-bottom: 3px black;">
+                <tr class="table" style="margin-right: 3px; background-color: black; color: white; ">
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Person
+                    </th>
+                    <th>
+                        Total Price
+                    </th>
+                    <td>
+                        Action
+                    </td>
+                </tr>
+
+                @foreach (var item in ViewBag.cart)
+                {
+                    <tr>
+                        <td>
+                            <img src="@Url.Content(@item.Movie.MovieImage)" width="50" />
+                        </td>
+                        <td>
+                            @item.Movie.Name
+                        </td>
+                        <td>
+                            @item.Movie.Price
+                        </td>
+                        <td>
+                            <div class="row car-quantity">
+                                <div class="row">
+                                    <a class="btn btn-sm btn-info" asp-controller="cart"
+                                    asp-action="increaseItem" asp-route-id="@item.Movie.Id">+</a>
+                                    <input type="button" class="quantity" value=@item.Quantity>
+                                    <a class="btn tbn-sm btn-danger" asp-controller="cart"
+                                    asp-action="decreaseItem" asp-route-id="@item.Movie.Id">-</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            @(item.Quantity * item.Movie.Price)
+                        </td>
+                        <td>
+                            <div class="btn btn-sm btn-danger">
+                                <a asp-controller="cart" asp-action="Remove" asp-route-id="@item.Movie.Id">Remove</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+                <tr style="background-color: darkgray;">
+                    <td colspan="1" style="text-align: right">
+                        <div class="btn btn-sm btn-info">
+                            <a asp-controller="Movies" asp-action="Index">Continue Booking</a>
+                        </div>
+                    </td>
+                    <td colspan="3" style="text-align: right; font-weight: bold";>
+                        <p>Total Price</p>
+                    </td>
+                    <td>
+                        <p>$@ViewBag.total</p>
+                    </td>
+                    <td>
+                        <div class="btn btn-sm btn-danger">
+                            <a asp-controller="cart" asp-action="RemoveAll" asp-route-id="">Remove All</a> 
+                        </div>
+                    </td>
+                </tr>
+            </table>
+</div>
+
+<!-- Style -->
+<style>
+    .quantity {
+        width: 25px;
+    }
+    .car-quantity {
+        margin-left: 3px;
+    }
+    .btn a {
+        list-style-type: none;
+        text-decoration: none;
+    }
+    .btn a:hover {
+        color: white;
+    }
+</style>
+
+</body>
+</html>

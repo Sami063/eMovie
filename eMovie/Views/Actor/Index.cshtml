@@ -1,0 +1,59 @@
+﻿@model IEnumerable<eMovie.Models.Actor>
+
+@{
+    ViewData["Title"] = "Available Actors";
+    
+}
+
+<div class="col-3">
+    <a asp-action="Create" class="btn btn-info form-control text-white">Create Actor</a>
+</div>
+
+<div class="col-12 border p-0 mt-3">
+    <form method="get">
+        @if(Model.Count() > 0)
+        {
+            <table class="table table-striped">
+                <tr class="table">
+                    <th>
+                       Name
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.Bio)
+                    </th>
+                </tr>
+
+                @foreach (var actor in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="" class="map-link">
+                            <img src="@Url.Content(@actor.ProfileURL)" width="150" /> 
+                            </a> <br>
+                            @Html.DisplayFor(a => actor.FullName) 
+                        </td>
+                        <td>
+                            @Html.DisplayFor(a => actor.Bio)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Detail", "Detail", new { id = actor.Id })
+                            @Html.ActionLink("Delete", "Delete", new { id = actor.Id })
+                        </td>
+                    </tr>
+                }
+            </table>
+        } 
+        else
+        {
+            <h1> No Actors Available in this moment :( </h1>
+        }
+    </form>
+</div>
+
+<style>
+    img {
+        width: 80px; 
+        height: 80px;
+        border-radius: 50%;
+    }
+</style>

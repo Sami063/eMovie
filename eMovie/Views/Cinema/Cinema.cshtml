@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+@model IEnumerable<eMovie.Models.Cinema>
+@{
+    ViewData["Title"] = "Available Cinemas";
+}
+        <!-- Header -->
+        <meta name="viewport" content="mobile" />
+        <title>Index</title>
+    </head>
+    <body>
+
+        <!-- Search form for cinemas -->
+
+
+<div class="col-12 border p-0 mt-3">
+    <form method="get">
+        @if(Model.Count() > 0)
+        {
+            <table class="table table-striped border table-dark">
+                <tr class="table-primary">
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.CinemaLogo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.Description)
+                    </th>
+                </tr>
+
+                @foreach (var cinema in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="@Url.Content(@cinema.CinemaLogo)" width="200" /> 
+                        </td>
+                        <td>
+                            @Html.DisplayFor(c => cinema.Name) 
+                        </td>
+                        <td>
+                            @Html.DisplayFor(c => cinema.Description)
+                        </td>
+                        <td>
+                            <div class="btn btn-success btn-sm text-white">
+                                @Html.ActionLink("Detail", "Detail", new { id = cinema.Id })
+                            </div>
+                            <div class="btn btn-danger btn-sm text-white">
+                                @Html.ActionLink("Delete", "Delete", new { id = cinema.Id } )
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        } 
+        else
+        {
+            <h1> No Cinemas Available in this moment :( </h1>
+        }
+    </form>
+</div>
+
+
+<style>
+    .form-outline {
+       
+        display: inline-flex;
+    }
+</style>
+    </body>
+</html>

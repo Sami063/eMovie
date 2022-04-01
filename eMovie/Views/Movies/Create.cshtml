@@ -1,0 +1,25 @@
+﻿@model eMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Movies/Detail.cshtml";
+}
+
+<div class="row">
+    <form method="CreateMovie">
+        <div class="col-md-4">
+            <div class="form-group">
+                <p>Profile url</p>
+                <input type="text" name="Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="form-group">
+                <p>Category</p>
+                <select @Html.DisplayFor(p => p.MovieCategory)
+            </div>
+        </div>
+    </form>
+</div>

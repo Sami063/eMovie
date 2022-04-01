@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eMovie", "eMovie\eMovie.csproj", "{9A450C76-BB2C-4F4B-9B5C-134CE519C7DF}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CA9BDDFC-106A-4FBE-9347-714A7C59D460}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A450C76-BB2C-4F4B-9B5C-134CE519C7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A450C76-BB2C-4F4B-9B5C-134CE519C7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A450C76-BB2C-4F4B-9B5C-134CE519C7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A450C76-BB2C-4F4B-9B5C-134CE519C7DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9BDDFC-106A-4FBE-9347-714A7C59D460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9BDDFC-106A-4FBE-9347-714A7C59D460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9BDDFC-106A-4FBE-9347-714A7C59D460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9BDDFC-106A-4FBE-9347-714A7C59D460}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {725A34A5-D9C4-4A28-A177-45D1ADD886F2}
+	EndGlobalSection
+EndGlobal

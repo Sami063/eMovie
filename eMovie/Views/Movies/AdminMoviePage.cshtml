@@ -1,0 +1,68 @@
+﻿@model IEnumerable<eMovie.Models.Movie>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6" style="margin-left: 0px;">
+                <p>Get Tickets for your first movie </p>
+            </div>
+            <div class="col-4">
+                <form asp-controller="Movies" asp-action="AdminMoviePage">
+                    <span colspan="2" class="btn-group">
+                        <input class="form-control col-12" type="text" name="searchMovie" placeholder="Search" />
+                    </span>
+                    <input class="p-1 ml-2 btn btn-info" type="submit" value="Find" />
+               </form>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-sm btn-info" asp-action="CreateMovie" >Create</a>
+            </div>
+        </div>
+    </div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 20em; margin: 10px; border-top-left-radius: 5%; border-top-right-radius: 5%; background-color: #312d2d;">
+            <img src="@Url.Content(item.MovieImage)" class="card-img-top"/> 
+            <div class="card-body" style="background-color: black;">
+                <div class="card-title">
+                    <p>@item.Name</p> 
+                </div>
+                <div class="card-text">
+                    <p>June 19, 2018</p>
+                </div>
+                <div class="btn btn-info btn-sm">
+                     @Html.ActionLink("Edit", "Edit", new { id = item.Id } )
+                </div>
+                 <div class="btn btn-success btn-sm">
+                     @Html.ActionLink("Delete", "Delete", new { id = item.Id } )
+                 </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style> 
+    body {
+        
+        background-image: url("https://i.ytimg.com/vi/9sNQFJAb3Ss/maxresdefault.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    p {
+        color: white;
+    }
+
+    .card-text p {
+        color: white;
+    }
+    .card-title p {
+        color: white;
+    }
+    .card-img-top {
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+    }
+</style>
+

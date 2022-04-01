@@ -1,0 +1,94 @@
+﻿@model IEnumerable<eMovie.Models.Movie>
+
+
+    <div class="row">
+        <div class="col-sm">
+            <p>Get Tickets for your first movie </p>
+        </div>
+        <!-- Form For Movie Category - Filter By Category -->
+        <div class="col-sm"> 
+            <form>
+                <div class="btn btn-success btn-sm">
+                     <a name="genere" value="Fiction" asp-action="Fiction">Fiction</a>
+                </div>
+                <div class="btn btn-success btn-sm">
+                     <a name="genere" value="Documentary" asp-action="Documentary">Documentary</a>
+                </div>
+                <div class="btn btn-success btn-sm">
+                     <a name="genere" value="Comedy" asp-action="Comedy">Comedy</a>
+                </div>
+                <div class="btn btn-success btn-sm">
+                     <a name="genere" value="Action" asp-action="Action">Action</a>
+                </div>
+            </form> 
+        </div>
+        <!-- Search for movies -->
+        <div class="col-sm">
+            <form asp-controller="Movies" asp-action="Index">
+                <span class="btn-group">
+                    <input class="form-control col-12" type="text" name="searchMovie" placeholder="Search" />
+                </span>
+                <input class="p-1 ml-2 btn btn-info" type="submit" value="Find" />
+            </form>
+        </div>
+    </div>
+
+<div class="row movieCard">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 20em; margin: 10px; border-top-left-radius: 5%; border-top-right-radius: 5%; background-color: #312d2d;">
+            <img src="@Url.Content(item.MovieImage)" class="card-img-top"/> 
+            <div class="card-body" style="background-color: black;">
+                <p class="card-title font-italic" style="font-size: 20px;"><b>@item.Name</b></p>
+                <p class="card-text"><b>Year: </b>June 19, 2018</p> 
+                <p class="card-text"><b>Genere: </b>@item.MovieCategory.ToString()</p>
+                <p class="card-text"><b>Language: </b>@item.MovieLanguage.ToString()</p> 
+                <p class="card-text"><b>Cinema: </b>@item.Cinema.Name</p>
+                
+                <div class="btn btn-info btn-sm">
+                     @Html.ActionLink("View More", "Detail", new { id = item.Id } )
+                </div>
+                 <div class="btn btn-success btn-sm actions">
+                     <a asp-controller="cart" asp-action="buy" asp-route-id="@item.Id">Buy Ticket</a>
+                 </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Styles and events for the Movie card. -->
+
+<style> 
+    body {
+        
+        background-image: url("https://i.ytimg.com/vi/9sNQFJAb3Ss/maxresdefault.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    p {
+        color: white;
+    }
+
+    .card-text p {
+        color: white;
+    }
+    .card-title p {
+        color: white;
+    }
+    .card-img-top {
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+        height: 25em;
+    }
+    .btn a {
+        list-style-type: none;
+        text-decoration: none;
+    }
+    .btn a:hover {
+        list-style-type: none;
+        text-decoration: none;
+        color: whitesmoke;
+    }
+</style>
+
