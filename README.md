@@ -1,9 +1,8 @@
 # eMovie
 
-# UI
-
 # Database: MSSql
 
-# Shopping Cart
+# Crud:
+jdsjdbs
 
-# Crud App
+# Shopping Cart
