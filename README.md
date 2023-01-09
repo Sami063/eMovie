@@ -39,3 +39,15 @@ Teknologi:
 
 
 <img width="1027" alt="image" src="https://user-images.githubusercontent.com/85618108/211285521-b5150c26-df93-485d-abaf-ec48a6580a80.png">
+<img width="977" alt="image" src="https://user-images.githubusercontent.com/85618108/211285767-5fafb850-dfc3-4942-9bf8-8f7bcf8ddc3c.png">
+<img width="1003" alt="image" src="https://user-images.githubusercontent.com/85618108/211285941-149573ea-d2f3-4579-9869-e901fe39e7aa.png">
+
+<img width="1025" alt="image" src="https://user-images.githubusercontent.com/85618108/211289018-f62e7814-bf04-4b7b-aa7a-1380b7ef8106.png">
+
+
+<img width="1002" alt="image" src="https://user-images.githubusercontent.com/85618108/211286117-987a2334-8517-4d3f-a672-1eb3e9154ce1.png">
+
+<img width="371" alt="image" src="https://user-images.githubusercontent.com/85618108/211289355-49f27c10-4a06-40d7-bcf7-7d62c04b12a7.png">
+
+
+
